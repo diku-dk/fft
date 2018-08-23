@@ -1,4 +1,4 @@
-# Fast Fourier Transforms in Futhark
+# Fast Fourier Transforms in Futhark [![Build Status](https://travis-ci.org/diku-dk/fft.svg?branch=master)](https://travis-ci.org/diku-dk/fft)
 
 A library for perfoming FFTs in Futhark.  Currently only provides a
 radix-2 Stockham implementation, but will hopefully grow in the future
