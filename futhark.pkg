@@ -1,0 +1,5 @@
+package github.com/diku-dk/fft
+
+require {
+  github.com/diku-dk/complex 0.1.1 #4a0f92fbefaecfbb1473f9ad0c383b69260e3cdb
+}
