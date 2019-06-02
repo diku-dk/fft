@@ -27,7 +27,7 @@ module mk_fft (R: real): {
     let idxD = ((j/ns)*ns*radix) + (j % ns)
     in (idxD, v0, idxD+ns, v1)
 
-  let fft' [n] (forward: R.t) (input: [n]complex) (bits: i32) : []complex =
+  let fft' [n] (forward: R.t) (input: [n]complex) (bits: i32) : [n]complex =
     let input = copy input
     let output = copy input
     let ix = iota(n/radix)
@@ -56,7 +56,7 @@ module mk_fft (R: real): {
     assert (is_power_of_2 n)
            (let bits = log2 n
             let forward' = if forward then R.i32 1 else R.i32 (-1)
-            in take n (fft' forward' data bits))
+            in fft' forward' data bits)
 
   let fft [n] (data: [n](R.t, R.t)): [n](R.t, R.t) =
     generic_fft true data
@@ -78,7 +78,7 @@ module mk_fft (R: real): {
             let forward' = if forward then R.i32 1 else R.i32 (-1)
             let data = map (\r -> fft' forward' r m_bits) data
             let data = map (\c -> fft' forward' c n_bits) (transpose data)
-            in (transpose data)[:n,:m])
+            in transpose data)
 
   let fft2 [n][m] (data: [n][m](R.t, R.t)): [n][m](R.t, R.t) =
     generic_fft2 true data
