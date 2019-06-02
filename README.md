@@ -4,10 +4,6 @@ A library for perfoming FFTs in Futhark.  Currently only provides a
 radix-2 Stockham implementation, but will hopefully grow in the future
 to contain more algorithms.
 
-**Note**: Behaviour for input sizes that are not powers of two is
-somewhat broken ([see issue #1 for more
-details](https://github.com/diku-dk/fft/issues/1)).
-
 ## Installation
 
 ```
