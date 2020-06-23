@@ -4,6 +4,9 @@ A library for perfoming FFTs in Futhark.  Currently only provides a
 radix-2 Stockham implementation, but will hopefully grow in the future
 to contain more algorithms.
 
+**Warning:** currently supports *only* input sizes that are powers of
+two.
+
 ## Installation
 
 ```
