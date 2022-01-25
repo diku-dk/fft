@@ -11,6 +11,10 @@ module fft = mk_fft f32
 -- output { [10f32, -2f32, -2f32, -2f32] [0f32, 2f32, 0f32, -2f32] }
 -- input { [1f32, 2f32, 3f32] [0f32, 0f32, 0f32] }
 -- error: power_of_2
+-- compiled random input { [65536]f32 [65536]f32 }
+-- compiled random input { [1048576]f32 [1048576]f32 }
+-- compiled random input { [4194304]f32 [4194304]f32 }
+-- compiled random input { [33554432]f32 [33554432]f32 }
 entry test_fft (res: []f32) (ims: []f32) = unzip (fft.fft (zip res ims))
 
 -- ==
